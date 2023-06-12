@@ -27,13 +27,13 @@ public class HelloWorldServlet extends HttpServlet {
 //         Bonus
 //            Allow the user to pass a parameter in the query string to reset the counter.
 
-        res.setContentType("text/html");
-        pageCounter++;
-        String reset = req.getParameter("reset");
-        if (reset != null) {
-            pageCounter = 0;
-        }
-        out.printf("<p>Page Counter: %s</p>", pageCounter);
+//        res.setContentType("text/html");
+//        pageCounter++;
+//        String reset = req.getParameter("reset");
+//        if (reset != null) {
+//            pageCounter = 0;
+//        }
+//        out.printf("<p>Page Counter: %s</p>", pageCounter);
 
     }
 }
