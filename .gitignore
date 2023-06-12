@@ -2,3 +2,8 @@
 target/
 .idea/
 Config.java
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
