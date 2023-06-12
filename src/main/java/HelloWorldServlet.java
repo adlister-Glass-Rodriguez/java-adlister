@@ -22,7 +22,7 @@ public class HelloWorldServlet extends HttpServlet {
         }
         out.println("<h1>Hello, " + name + "!</h1>");
 
-//      Create a page view counter
+//      Create a page view counter.
 //      Create a page that displays a number that goes up by one every time the /count page is viewed.
 //         Bonus
 //            Allow the user to pass a parameter in the query string to reset the counter.
