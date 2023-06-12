@@ -13,14 +13,14 @@ import java.io.PrintWriter;
 public class HelloWorldServlet extends HttpServlet {
 
     private int pageCounter;
-        protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-            res.setContentType("text/html");
-            PrintWriter out = res.getWriter();
-            String name = req.getParameter("name");
-            if (name == null) {
-                name = "World";
-            }
-            out.println("<h1>Hello, " + name + "!</h1>");
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
+        res.setContentType("text/html");
+        PrintWriter out = res.getWriter();
+        String name = req.getParameter("name");
+        if (name == null) {
+            name = "World";
+        }
+        out.println("<h1>Hello, " + name + "!</h1>");
 
 //      Create a page view counter
 //      Create a page that displays a number that goes up by one every time the /count page is viewed.
@@ -28,11 +28,11 @@ public class HelloWorldServlet extends HttpServlet {
 //            Allow the user to pass a parameter in the query string to reset the counter.
 
         res.setContentType("text/html");
-            pageCounter++;
-            String reset = req.getParameter("reset");
-            if (reset != null) {
-                pageCounter = 0;
-            }
+        pageCounter++;
+        String reset = req.getParameter("reset");
+        if (reset != null) {
+            pageCounter = 0;
+        }
         out.printf("<p>Page Counter: %s</p>", pageCounter);
 
     }
