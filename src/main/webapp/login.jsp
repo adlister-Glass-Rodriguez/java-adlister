@@ -23,15 +23,25 @@
 
 <jsp:include page="partials/navbar.jsp" />
 
-<form method="post" action="login.jsp">
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="username" required><br><br>
 
-  <label for="password">Password:</label>
-  <input type="password" id="password" name="password" required><br><br>
+<h1>Welcome to my World</h1>
 
-  <input type="submit" value="Login">
-</form>
+<h4>Please Login:</h4>
+
+  <div class="container-fluid">
+    <form method="post" action="login.jsp">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required><br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+
+      <input type="submit" value="Login">
+
+    </form>
+  </div>
+
+<jsp:include page="partials/scripts.jsp" />
 </body>
 </html>
 
