@@ -38,7 +38,7 @@
         </select>
         <br>
         <br>
-        <label>Toppings:</label>
+<%--        <label>Toppings:</label>--%>
         <br>
         <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
         <input type="checkbox" name="toppings" value="mushrooms">Mushrooms<br>
