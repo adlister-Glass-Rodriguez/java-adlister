@@ -32,6 +32,7 @@
         <label for="sauce">Sauce Type:</label>
         <select name="sauce" id="sauce">
             <option value="Marinara Sauce">Marinara</option>
+            <option value="Spicy Marinara Sauce">Spicy Marinara</option>
             <option value="Alfredo">Alfredo</option>
             <option value="Pesto">Pesto</option>
             <option value="BBQ">BBQ</option>
@@ -41,10 +42,16 @@
 <%--        <label>Toppings:</label>--%>
         <br>
         <input type="checkbox" name="toppings" value="pepperoni">Pepperoni<br>
+        <input type="checkbox" name="toppings" value="sausage">Sausage<br>
+        <input type="checkbox" name="toppings" value="ham">Ham<br>
+        <input type="checkbox" name="toppings" value="beef">Beef<br>
+        <input type="checkbox" name="toppings" value="chicken">Chicken<br>
         <input type="checkbox" name="toppings" value="mushrooms">Mushrooms<br>
         <input type="checkbox" name="toppings" value="onions">Onions<br>
-        <input type="checkbox" name="toppings" value="sausage">Sausage<br>
         <input type="checkbox" name="toppings" value="olives">Olives<br>
+        <input type="checkbox" name="toppings" value="spinach">Spinach<br>
+        <input type="checkbox" name="toppings" value="peppers">Peppers<br>
+        <input type="checkbox" name="toppings" value="pineapples">Pineapples<br>
         <br>
 
         <label for="address">Delivery Address:</label>
