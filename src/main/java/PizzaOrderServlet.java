@@ -7,8 +7,6 @@ import java.io.IOException;
 
 @WebServlet(name = "PizzaOrderServlet", urlPatterns = "/pizza-order")
 
-
-
 public class PizzaOrderServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Retrieve form data
