@@ -8,9 +8,9 @@ import java.io.IOException;
 
 @WebServlet(name = "pickColor", urlPatterns = "/pickColor")
 public class ColorServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String color = request.getParameter("color");
-        String redirectURL = "viewColor.jsp?color=" + color;
+        String redirectURL = "viewColor?color=" + color;
         response.sendRedirect(redirectURL);
     }
 }

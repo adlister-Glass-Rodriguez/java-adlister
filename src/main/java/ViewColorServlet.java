@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "viewColor", urlPatterns = "/view-color")
 public class ViewColorServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("viewColor.jsp").forward(request, response);
+        request.getRequestDispatcher("viewColor").forward(request, response);
     }
 }
