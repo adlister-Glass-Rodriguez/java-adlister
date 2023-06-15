@@ -63,10 +63,7 @@ public class BeanTest {
             quotes.add(quote3);
 
             for(Quote quote : quotes) {
-                System.out.printf("%s %s said: %s. Pretty interesting.%n", quote.getAuthor().getFirstName(), quote.getAuthor().getLastName(), quote.getContent());
-
-                    System.out.printf("%s %s said: %s. Pretty interesting.%n", quote.getAuthor().getFirstName(), quote.getAuthor().getLastName(), quote.getContent());
-
+                System.out.printf("%s %s said: %s. %n", quote.getAuthor().getFirstName(), quote.getAuthor().getLastName(), quote.getContent());
             }
         }
     }
