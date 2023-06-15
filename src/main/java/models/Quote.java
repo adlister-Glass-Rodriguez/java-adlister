@@ -1,3 +1,7 @@
+package models;
+
+import models.Author;
+
 import java.io.Serializable;
 
 public class Quote implements Serializable {

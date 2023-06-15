@@ -1,5 +1,10 @@
+package models;
+
+import models.Album;
+import models.Author;
+import models.Quote;
+
 import java.util.ArrayList;
-import java.util.Date;
 
 public class BeanTest {
 
@@ -8,15 +13,15 @@ public class BeanTest {
             Album album1 = new Album();
             Quote quote1 = new Quote();
             Author author1 = new Author();
-            Date releaseDate1 = new Date("October 8, 2021");
+//            Date releaseDate1 = new Date("October 8, 2021");
             Album album2 = new Album();
             Quote quote2 = new Quote();
             Author author2 = new Author();
-            Date releaseDate2 = new Date("June 15, 2023");
+//            Date releaseDate2 = new Date("June 15, 2023");
             Album album3 = new Album();
             Quote quote3 = new Quote();
             Author author3 = new Author();
-            Date releaseDate3 = new Date("January 1, 2014");
+//            Date releaseDate3 = new Date("January 1, 2014");
 
             author1.setId(1);
             author1.setFirstName("John");
@@ -41,19 +46,19 @@ public class BeanTest {
             album1.setId(1);
             album1.setArtist_name("Cody Johnson");
             album1.setRecord_name("Human");
-            album1.setRelease_date(releaseDate1);
+//            album1.setRelease_date(releaseDate1);
             album1.setSales(4.5);
             album1.setGenre("country");
             album2.setId(2);
             album2.setArtist_name("Hardy");
             album2.setRecord_name("The Mocking Bird & The Crow");
-            album2.setRelease_date(releaseDate2);
+
             album2.setSales(8.7);
             album2.setGenre("Country");
             album3.setId(3);
             album3.setArtist_name("Eric Church");
             album3.setRecord_name("The Outsiders");
-            album3.setRelease_date(releaseDate3);
+
             album3.setSales(13.5);
             album3.setGenre("Country");
 

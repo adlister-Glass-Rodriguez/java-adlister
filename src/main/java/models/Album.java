@@ -1,3 +1,4 @@
+package models;
 
 import lombok.*;
 import java.io.Serializable;
