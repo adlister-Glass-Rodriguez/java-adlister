@@ -11,11 +11,11 @@
 
     <div class="container">
             <div class="container">
-                <h1>Welcome, <%= request.getAttribute("username") %>!</h1>
+                <h1>Welcome your Profile ${sessionScope.username} </h1>
                 <h2>Viewing your profile.</h2>
             </div>
 
-        <form action="/logout" method="POST">
+        <form action="/login" method="POST">
             <input type="submit" class="btn btn-primary btn-block" value="Log Out">
         </form>
 
