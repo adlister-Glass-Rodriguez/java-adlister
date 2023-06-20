@@ -1,5 +1,8 @@
 package models;
 
+import lombok.ToString;
+
+@ToString
 public class Ad {
     private long id;
     private long userId;
