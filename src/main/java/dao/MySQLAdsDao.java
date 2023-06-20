@@ -2,6 +2,7 @@ package dao;
 
 import com.mysql.cj.jdbc.Driver;
 import models.Ad;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,24 +11,24 @@ public class MySQLAdsDao implements Ads {
 
     private Connection connection;
 
-    // Constructor: connect to a database
+    // Constructor: connect to a database - added connection to a separate method.
     public MySQLAdsDao(Config config) {
+        connectToDatabase(config);
+    }
+
+    private void connectToDatabase(Config config) {
         try {
             // database driver that communicates with MySQL from this JAVA app
             DriverManager.registerDriver(new Driver());
             // connection object that represents a database connection
             // use the connection object to create statements
-            connection = DriverManager.getConnection(
-                    config.getUrl(),
-                    config.getUser(),
-                    config.getPassword()
-            );
+            connection = DriverManager.getConnection(config.getUrl(), config.getUser(), config.getPassword());
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
         }
-    }// MYSQLAdsDao
+    }
 
-    @Override // List of all dao.Ads
+    @Override// List of all dao.Ads
     public List<Ad> all() {
         try {
             // statement object that represents an individual SQL statement
@@ -39,16 +40,17 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);
         }
-    }// all
+    }
 
-    // SQL INSERT INTO Statement (for insert method)
-    private String insertQuery (Ad ad) {
+    //    SQL INSERT INTO Statement (for insert method)
+    private String insertQuery(Ad ad) {
         return "INSERT INTO ads(user_id, title, description) VALUES ("
                 + ad.getUserId() + ", '"
                 + ad.getTitle() + "', '"
                 + ad.getDescription()
                 + "')";
-    }// insertQuery
+    }
+
 
     // Insert new models.Ad into ads table
     @Override
@@ -70,7 +72,7 @@ public class MySQLAdsDao implements Ads {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating a new ad.", e);
         }
-    }// insert
+    }
 
     // extract an ad (row) from the ads table and convert it into an ad object
     private Ad extractAdFromDatabase(ResultSet rs) throws SQLException {
@@ -92,8 +94,6 @@ public class MySQLAdsDao implements Ads {
             // add an ad object to the ads list
             ads.add(extractAdFromDatabase(rs));
         }
-        // return the ads list
         return ads;
     }
-
-}// class
+}
