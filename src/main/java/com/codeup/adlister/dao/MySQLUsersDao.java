@@ -3,6 +3,7 @@ package com.codeup.adlister.dao;
 import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
+
 import java.sql.*;
 
 public class MySQLUsersDao implements Users {
@@ -13,7 +14,7 @@ public class MySQLUsersDao implements Users {
     public MySQLUsersDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
-            connection = DriverManager.getConnection(config.getUrl(), config.getUser(), config.getPassword());
+            connection = DriverManager.getConnection(config.getUrl(), config.getUsername(), config.getPassword());
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to database!", e);
         }
@@ -31,6 +32,7 @@ public class MySQLUsersDao implements Users {
             User newUser = new User(rs.getLong("id"), rs.getString("username"), rs.getString("email"), rs.getString("password"));
             return newUser;
         } catch (SQLException e) {
+            e.printStackTrace();
             throw new RuntimeException("Could not find user!");
         }
     }
