@@ -21,6 +21,9 @@ public class User {
         this.password = password;
     }
 
+    public User(long id, String title, String description) {
+    }
+
     public long getId() {
         return id;
     }
@@ -52,4 +55,6 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 }

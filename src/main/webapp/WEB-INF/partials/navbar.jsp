@@ -10,12 +10,12 @@
                     <a class="navbar-brand" href="/ads">Adlister</a>
                 </div>
 
-                    <%--       SEARCH BAR--%>
-                <form class="navbar-form navbar-right" action="/search">
+                <%--Search Bar--%>
+                <form class = "navbar-form navbar-right" action="/SearchAdsServlet" method="GET" class="search-form">
                     <div class="form-group">
-                        <input type="text" name="search"  placeholder="Search all ads">
+                        <input id="user-search" name="user-search" placeholder="Search all ads" class="form-control" type="text">
                     </div>
-                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    <input type="submit" class="btn" value="Search">
                 </form>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -38,13 +38,9 @@
                     <li><a href="/ads/create">Create Ad</a></li>
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/logout">Logout</a></li>
+                    <li><a href="/settings">User Settings</a></li>
                     <li>
-                        <form class="navbar-form navbar-right" action="/search">
-                            <div class="form-group">
-                                <input type="text" name="search"  placeholder="Search all ads">
-                            </div>
-                            <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                        </form>
+
                     </li>
                 </ul>
             </div>

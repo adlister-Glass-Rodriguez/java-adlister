@@ -12,40 +12,33 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.RegisterServlet", urlPatterns = "/register")
-public class RegisterServlet extends HttpServlet {
+@WebServlet(name = "controllers.UpdateServlet", urlPatterns = "/update")
+public class UpdateServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/update.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        User loggedInUser = (User) request.getSession().getAttribute("user");
+
         String username = request.getParameter("username");
         String email = request.getParameter("email");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
 
-
         // validate input
         boolean inputHasErrors = username.isEmpty()
                 || email.isEmpty()
                 || password.isEmpty()
-                || (!password.equals(passwordConfirmation));
-
+                || (! password.equals(passwordConfirmation));
 
         if (inputHasErrors) {
-
-            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
-            response.sendRedirect("/register");
+            response.sendRedirect("/update");
             return;
         }
 
-        User user = new User(username, email, password);
-
-        String hash = Password.hash(user.getPassword());
-
-        user.setPassword(hash);
-
-        DaoFactory.getUsersDao().insert(user);
-        response.sendRedirect("/login");
+        // update user
+        DaoFactory.getUsersDao().update(new User(loggedInUser.getId(), username, email, Password.hash(password)));
+        response.sendRedirect("/profile");
     }
 }

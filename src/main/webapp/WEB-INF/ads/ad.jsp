@@ -3,16 +3,19 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Welcome to my site!" />
+        <jsp:param name="title" value="Your Profile" />
     </jsp:include>
-
-    <link rel="stylesheet" type="text/css" href="CSS/home.css">
-
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../../CSS/view-ad.css" />
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-<div class="container">
-    <h1>Welcome to Adlister 7.0</h1>
+<h1>This is the view clicked Ad page</h1>
+
+<div class="col-md-6">
+    <h2>${clickAd.title}</h2>
+    <p>${clickAd.description}</p>
 </div>
+
 </body>
 </html>
