@@ -1,6 +1,7 @@
 package com.codeup.adlister.controllers;
 
 import com.codeup.adlister.dao.DaoFactory;
+import com.codeup.adlister.dao.Users;
 import com.codeup.adlister.models.User;
 import com.codeup.adlister.util.Password;
 import org.mindrot.jbcrypt.BCrypt;
@@ -33,9 +34,15 @@ public class RegisterServlet extends HttpServlet {
 
 
         if (inputHasErrors) {
-
             request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
-            response.sendRedirect("/register");
+            return;
+        }
+
+        // Check if username already exists
+        if (isUsernameTaken(username)) {
+            request.setAttribute("error", "Username already exists");
+            request.getRequestDispatcher("/WEB-INF/error.jsp").forward(request, response);
+            response.sendRedirect("/error");
             return;
         }
 
@@ -47,5 +54,13 @@ public class RegisterServlet extends HttpServlet {
 
         DaoFactory.getUsersDao().insert(user);
         response.sendRedirect("/login");
+    }
+
+
+    // Helper method to check if username already exists
+    private boolean isUsernameTaken(String username) {
+        Users usersDao = DaoFactory.getUsersDao();
+        User existingUser = usersDao.findByUsername(username);
+        return existingUser != null;
     }
 }

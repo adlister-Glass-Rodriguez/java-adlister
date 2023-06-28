@@ -29,9 +29,6 @@
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </div>
     </form>
-    <form action="${pageContext.request.contextPath}/register" method="GET">
-        <input type="submit" class="btn btn-primary btn-block" value="register">
-    </form>
 </div>
 </body>
 
