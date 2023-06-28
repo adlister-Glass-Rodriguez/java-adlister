@@ -22,6 +22,7 @@ public class ViewProfileServlet extends HttpServlet {
             return;
         }
 
+
         User user = (User) request.getSession().getAttribute("user");
 
         // Retrieve the user's ads from the database

@@ -62,11 +62,6 @@ public class LoginServlet extends HttpServlet {
             } else {
                 response.sendRedirect("/profile");
             }
-//        } else {
-//            response.sendRedirect("/login?error=1");
-//
-//        }
-//    }
         }
     }
 }
