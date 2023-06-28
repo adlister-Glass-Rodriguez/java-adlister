@@ -5,6 +5,8 @@
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Update your Profile!" />
     </jsp:include>
+
+    <link rel="stylesheet" type="text/css" href="../CSS/home.css">
 </head>
 <body>
 

@@ -69,4 +69,5 @@ input[type="password"] {
     /*background-color: yellow;*/
     color: black;
     padding: 10px 5px;
+    border-bottom-color: darkblue;
 }

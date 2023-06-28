@@ -23,10 +23,19 @@ h1 {
 }
 
 .navbar {
-    /*background-color: yellow;*/
     color: black;
     padding: 10px 5px;
+    border-bottom-color: darkblue;
 }
+
+
+.btn:hover {
+    background-color: darkblue;
+}
+
+/*input{*/
+/*    background-color: #fedeee;*/
+/*}*/
 
 /*.navbar ul {*/
 /*    list-style: none;*/
