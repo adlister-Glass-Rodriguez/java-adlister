@@ -13,7 +13,7 @@
 <div class="container">
 
 
-    <h1>You have received error. Click login to try again. </h1>
+    <h1>You have received and Error. Try again! </h1>
     <img src="https://st2.depositphotos.com/1006899/5283/i/600/depositphotos_52839753-stock-photo-error-illustration.jpg">
 
 
