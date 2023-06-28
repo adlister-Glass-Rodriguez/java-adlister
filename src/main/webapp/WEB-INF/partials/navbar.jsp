@@ -38,7 +38,7 @@
                     <li><a href="/ads/create">Create Ad</a></li>
                     <li><a href="/profile">Profile</a></li>
                     <li><a href="/logout">Logout</a></li>
-                    <li><a href="/settings">User Settings</a></li>
+                    <li><a href="/update">Update Profile</a></li>
                     <li>
 
                     </li>

@@ -10,11 +10,6 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-<div class="profile-buttons" id="profile-buttons">
-    <button onclick="window.location.href='/update'">Edit Profile</button>
-    <button onclick="window.location.href='/delete'">Delete Profile</button>
-    <button onclick="window.location.href='/ads/create'">Create New Ad</button>
-</div>
 
 <h1>Welcome ${sessionScope.user.username}! Here are all your ads</h1>
 

@@ -15,7 +15,7 @@ public class UpdateAdServlet extends HttpServlet {
         System.out.println(deleteAd);
         if (deleteAd != null) {
             DaoFactory.getAdsDao().deleteAd(Long.valueOf(deleteAd));
-            response.sendRedirect("/ads");
+            response.sendRedirect("/profile");
         } else {
             String updateAd = request.getParameter("updateBtn");
             Ad ad = DaoFactory.getAdsDao().selectAdById(Long.valueOf(updateAd));
@@ -35,7 +35,7 @@ public class UpdateAdServlet extends HttpServlet {
         Ad ad = DaoFactory.getAdsDao().getAd(adId);
         if (ad == null) {
             // Handle the case where the ad is not found
-            response.sendRedirect("/ads");
+            response.sendRedirect("/profile");
             return;
         }
 
@@ -45,6 +45,6 @@ public class UpdateAdServlet extends HttpServlet {
         DaoFactory.getAdsDao().updateAd(ad);
 
 
-        response.sendRedirect("/ads");
+        response.sendRedirect("/profile");
     }
 }
