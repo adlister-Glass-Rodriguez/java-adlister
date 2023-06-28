@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
         User user = DaoFactory.getUsersDao().findByUsername(username);
 
         if (user == null) {
-            response.sendRedirect("/login");
+            response.sendRedirect("/error");
             return;
         }
 
@@ -62,6 +62,11 @@ public class LoginServlet extends HttpServlet {
             } else {
                 response.sendRedirect("/profile");
             }
+//        } else {
+//            response.sendRedirect("/login?error=1");
+//
+//        }
+//    }
         }
     }
 }
