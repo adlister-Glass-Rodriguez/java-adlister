@@ -92,6 +92,10 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    @Override
+    public boolean isUsernameTaken(String username) {
+        return false;
+    }
 
 
     @Override
